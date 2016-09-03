@@ -1,6 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# edit for project
+FORWARD_PORT = 2230
+PRIVATE_NETWORK_IP = "192.168.33.12"
+
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
@@ -15,6 +19,8 @@ Vagrant.configure("2") do |config|
   config.vm.box = "centos65"
   config.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.5-x86_64-v20140110.box"
 
+  config.ssh.insert_key = false
+  
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -34,10 +40,10 @@ Vagrant.configure("2") do |config|
   # your network.
   # config.vm.network "public_network"
 
-  config.vm.define :master do |app|
-    app.vm.network "private_network", ip: "192.168.33.12"
-    app.vm.network "forwarded_port", id: "ssh", guest: 22, host: 2230
-    app.vm.hostname = "vagrant-hinagata-chef-master"
+  config.vm.define :vagrant_hinagata_chef do |app|
+    app.vm.network "private_network", ip: PRIVATE_NETWORK_IP
+    app.vm.network "forwarded_port", id: "ssh", guest: 22, host: FORWARD_PORT
+    app.vm.hostname = "vagrant-hinagata-chef"
   end
   
   # Share an additional folder to the guest VM. The first argument is
