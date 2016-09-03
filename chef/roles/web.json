@@ -1,0 +1,10 @@
+{
+  "name": "web",
+  "description": "setting for web server.",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+  },
+  "run_list": [
+  ]
+}
