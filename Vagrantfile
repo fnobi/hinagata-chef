@@ -2,8 +2,10 @@
 # vi: set ft=ruby :
 
 # edit for project
-FORWARD_PORT = 2230
-PRIVATE_NETWORK_IP = "192.168.33.12"
+SSH_FORWARDED_PORT = 2230
+PRIVATE_NETWORK_IP = "192.168.33.11"
+HOSTNAME = "vagrant-hinagata-chef.dev"
+
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
@@ -40,10 +42,10 @@ Vagrant.configure("2") do |config|
   # your network.
   # config.vm.network "public_network"
 
-  config.vm.define :vagrant_hinagata_chef do |app|
-    app.vm.network "private_network", ip: PRIVATE_NETWORK_IP
-    app.vm.network "forwarded_port", id: "ssh", guest: 22, host: FORWARD_PORT
-    app.vm.hostname = "vagrant-hinagata-chef"
+  config.vm.define :vagrant_hinagata_chef do |node|
+    node.vm.network :forwarded_port, id: "ssh", guest: 22, host: SSH_FORWARDED_PORT
+    node.vm.network :private_network, ip: PRIVATE_NETWORK_IP
+    node.vm.hostname = HOSTNAME
   end
   
   # Share an additional folder to the guest VM. The first argument is
