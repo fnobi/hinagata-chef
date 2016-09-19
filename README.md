@@ -28,24 +28,21 @@ ssh vagrant_hinagata_chef
 
 ### run chef
 
+```
+# prepare
+knife solo prepare <hostname>
+
+# cook
+knife solo cook <hostname>
+```
+
 #### for vm enviornment
 
 ```
-# prepare
-knife solo prepare vagrant_hinagata_chef
-
-# cook
-knife solo cook vagrant_hinagata_chef
+# turn off iptables
+service iptables stop
+chkconfig iptables off
 
 # test web server
 open http://vagrant-hinagata-chef.dev/
-```
-
-**memo**
-
-Turn off vagrant `iptables`.
-
-```
-service iptables stop
-chkconfig iptables off
 ```
