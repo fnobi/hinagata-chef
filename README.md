@@ -4,6 +4,7 @@ hinagata-chef
 ## dependencies
 
 - [Vagrant](https://www.vagrantup.com/)
+- [vagrant-hostupdater](https://github.com/cogitatio/vagrant-hostsupdater)
 - [chef](https://www.chef.io/chef/)
 - [knife-solo](https://matschaffer.github.io/knife-solo/)
 
