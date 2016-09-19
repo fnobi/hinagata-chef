@@ -4,7 +4,7 @@
 # edit for project
 SSH_FORWARDED_PORT = 2230
 PRIVATE_NETWORK_IP = "192.168.33.11"
-HOSTNAME = "vagrant-hinagata-chef.dev"
+HOSTNAME = "hinagata-chef.vagrant"
 
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure

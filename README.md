@@ -44,5 +44,5 @@ service iptables stop
 chkconfig iptables off
 
 # test web server
-open http://vagrant-hinagata-chef.dev/
+open http://hinagata-chef.vagrant/
 ```
