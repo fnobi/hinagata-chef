@@ -4,7 +4,8 @@ hinagata-chef
 ## dependencies
 
 - [Vagrant](https://www.vagrantup.com/)
-- knife-solo
+- [chef](https://www.chef.io/chef/)
+- [knife-solo](https://matschaffer.github.io/knife-solo/)
 
 ## setup
 
