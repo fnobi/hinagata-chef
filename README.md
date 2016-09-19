@@ -39,3 +39,12 @@ knife solo cook vagrant_hinagata_chef
 # test web server
 open http://vagrant-hinagata-chef.dev/
 ```
+
+**memo**
+
+Turn off vagrant `iptables`.
+
+```
+service iptables stop
+chkconfig iptables off
+```
